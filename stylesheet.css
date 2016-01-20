@@ -7,13 +7,6 @@ html {
     background-size: cover;
 }
 
-p {
-    
-}
-
-h2 {
-    
-}
 
 .picture {
     margin-left: auto;
@@ -63,4 +56,15 @@ h2 {
 
 .icon:hover {
     opacity: 1;
+}
+
+#display {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
 }
