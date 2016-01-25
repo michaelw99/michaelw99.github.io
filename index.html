@@ -4,8 +4,20 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300,700italic,900italic' rel='stylesheet' type='text/css'>
         <link href="stylesheet.css" rel="stylesheet">
         <script>
-        if (2 + 2 == 4) {
-            $("#display").html("Resume");
+        function func1() {
+            document.getElementById("display").innerHTML = "Resume"
+        }
+        function func2() {
+            document.getElementById("display").innerHTML = "LinkedIn"
+        }
+        function func3() {
+            document.getElementById("display").innerHTML = "GitHub"
+        }
+        function func4() {
+            document.getElementById("display").innerHTML = "Contact"
+        }
+        function nope() {
+            document.getElementById("display").innerHTML = ""
         }
         </script>
     </head>
@@ -23,10 +35,10 @@
                 violin, or guitar. Else, you might catch me napping, or playing video games.</p>
             </div>
             <div class="icons">
-                <a href="resume.pdf"><img src="images/resume.png" class="icon"></a>
-                <a href="https://www.linkedin.com/in/michael-wan-77a968104"><img src="images/linkedin.png" class="icon"></a>
-                <a href="https://github.com/michaelw99"><img src="images/github.png" class="icon"></a>
-                <a href="mailto:michaelw99@berkeley.edu?Subject=Hello%20there" target="_top"><img src="images/contact.png" class="icon"></a>
+                <a href="resume.pdf"><img onmouseover="func1()" onmouseout="nope()" src="images/resume.png" class="icon"></a>
+                <a href="https://www.linkedin.com/in/michael-wan-77a968104"><img onmouseover="func2()" onmouseout="nope()" src="images/linkedin.png" class="icon"></a>
+                <a href="https://github.com/michaelw99"><img onmouseover="func3()" onmouseout="nope()" src="images/github.png" class="icon"></a>
+                <a href="mailto:michaelw99@berkeley.edu?Subject=Hello%20there" target="_top"><img onmouseover="func4()" onmouseout="nope()" src="images/contact.png" class="icon"></a>
             </div>
             <div id="display">
             </div>
