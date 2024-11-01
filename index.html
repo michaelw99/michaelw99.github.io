@@ -1,47 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300,700italic,900italic' rel='stylesheet' type='text/css'>
-        <link href="stylesheet.css" rel="stylesheet">
-        <script>
-        function func1() {
-            document.getElementById("display").innerHTML = "Resume"
-        }
-        function func2() {
-            document.getElementById("display").innerHTML = "LinkedIn"
-        }
-        function func3() {
-            document.getElementById("display").innerHTML = "GitHub"
-        }
-        function func4() {
-            document.getElementById("display").innerHTML = "Contact"
-        }
-        function nope() {
-            document.getElementById("display").innerHTML = ""
-        }
-        </script>
-    </head>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Michael Wan</title>
+  <link rel="icon" href="images/dpadicon.png" type="image/x-icon">
+  <!-- Light mode favicon -->
+  <link rel="icon" href="images/dpadicon.png" type="image/x-icon" media="(prefers-color-scheme: light)">
+  <!-- Dark mode favicon -->
+  <link rel="icon" href="images/dpadicondarktheme.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <body>
-        <div class="container">
-            <div class="picture"></div>
-            <div class="name">
-                <h2>Howdy! I'm Michael.</h2>
-            </div>
-            <div class="text">
-                <p>I'm currently and independent game developer working on a Metroidvania beat'em up, 
-                lovin' it. When I'm not coding, you might find me out and 
-                about out shooting as a photographer, or maybe chilling at home playing some piano,
-                violin, or guitar. If I'm really feeling lazy, you might catch me napping, reading, or playing video games.</p>
-            </div>
-            <div class="icons">
-                <a href="GResume.pdf"><img onmouseover="func1()" onmouseout="nope()" src="images/resume.png" class="icon"></a>
-                <a href="https://www.linkedin.com/in/michaelw99"><img onmouseover="func2()" onmouseout="nope()" src="images/linkedin.png" class="icon"></a>
-                <a href="https://github.com/michaelw99"><img onmouseover="func3()" onmouseout="nope()" src="images/github.png" class="icon"></a>
-                <a href="mailto:michaelw99@berkeley.edu?Subject=Hello%20there" target="_top"><img onmouseover="func4()" onmouseout="nope()" src="images/contact.png" class="icon"></a>
-            </div>
-            <div id="display">
-            </div>
-        </div>
-    </body>
+<div class="navbar">
+  <a class="navname" href="#">MICHAEL WAN</a>
+  <a class="leftnav" href="#projects">Projects</a>
+  <a class="leftnav" href="#experience">Experience</a>
+  <a class="leftnav" href="#about">About</a>
+  <a class="rightnav" href="mailto:michaelw99@hotmail.com?Subject=Hello%20there">Contact</a>
+  <a class="rightnav" href="GResume.pdf">Resume</a>
+</div>
+
+<div class="intro">
+  <p class="name"> MICHAEL WAN </p>
+  <p class="title js-scroll fade-in-bottom scrolled"> GAME DESIGNER </p>
+  <p class="intro-text js-scroll fade-in-bottom scrolled">Welcome to my portfolio! I am a game designer with over 5 years of game and tech industry experience, and a passion for all things fun. I am currently developing games independently.</p>
+  <div class="section-title-projects js-scroll slide-left scrolled" id="projects">
+  PROJECTS
+  </div>
+</div>
+
+<div class="projects">
+  <div class="projects-grid">
+    <div class="project js-scroll slide-left scrolled">
+      <a href="tlou.html"> <img src="images/tlou.png" width="550" height="330"> </a>
+      <div class="project-name"></div> 
+    </div>
+    <div class="project js-scroll slide-right scrolled">
+      <a href="rbis.html"> <img src="images/rbis.png" width="550" height="330"> </a>
+      <div class="project-name"></div> 
+    </div>
+    <div class="project js-scroll slide-left scrolled">
+      <a href="ultralife.html"> <img src="images/ultralife.png" width="550" height="330"> </a>
+      <div class="project-name"></div> 
+    </div>
+    <div class="project js-scroll slide-right scrolled">
+      <a href="mahjong2.html"> <img src="images/mahjong2.png" width="550" height="330"> </a>
+      <div class="project-name"></div> 
+    </div>
+    <div class="project js-scroll slide-left">
+      <a href="kinetic.html"> <img src="images/kinetic.png" width="550" height="330"> </a>
+      <div class="project-name"></div> 
+    </div>
+    <div class="section-title-exp js-scroll slide-left" id="experience">
+      OTHER EXPERIENCE
+    </div>
+  </div>
+</div>
+
+<div class="experience">
+  <div class="experience-grid">
+    <div class="project js-scroll slide-left">
+      <img src="images/amazon.png" width="550" height="330">
+      <div class="overlay" id="amz"> 
+        <div class="projtext"> My career began at <b>Amazon</b> as a software engineer. Here I was on the passive monitoring team, developing tools to detect network outages across AWS and alarm network engineers immediately if an outage occurs, or is about to occur. I developed tools and dashboards ingesting massive quantities of data with Spark, and various AWS services like EMR, Lambda, S3, Kinesis, DataPipeline, and SQS. </div> 
+      </div>
+      <div class="project-name"></div> 
+    </div>
+    <div class="project js-scroll slide-right">
+      <img src="images/heroku.png" width="550" height="330">
+      <div class="overlay" id="her"> 
+        <div class="projtext"> I interned at <b>Heroku</b> for a summer working on the Heroku Dashboard web application working with Ember.js and Ruby. I implemented and helped design the Team Overview which had recently launched for Heroku Teams, and interface that aggregates relevant team metrics into a single space. </div>
+      </div>
+      <div class="project-name"></div> 
+    </div>
+    <div class="section-title-about js-scroll slide-left" id="about">
+      ABOUT
+    </div>
+  </div>
+</div>
+
+<div class="about">
+  <div class="me js-scroll fade-in-bottom">
+    <img src="images/me4.jpg" width="330" height="330">
+    <div class="about-text-box">
+      <p class="about-text"> I started my career as a software engineer at Amazon, and quickly realized that I'd <i>much</i> rather be making games. I was most recently at Naughty Dog, but have spent a healthy amount of time in between jobs working on pursuing personal projects.</p>  
+      <p class="about-text"> I spend a lot of my time making and playing games, but when I'm not, you might find me in some remote location at six in the morning scrambling to take a photo. I am also an occasional musician and music enjoyer/collector. </p>
+      <p class="about-text"> I'm currently looking for my next opportunity. If you are interested, please get in touch! </p>
+    </div>
+  </div>
+  <div class="buttons js-scroll fade-in-bottom">
+    <a href="GResume.pdf"> <button class="bottom-button"> RESUME </button></a>
+    <a href="https://www.linkedin.com/in/michaelw99"><button class="bottom-button"> LINKEDIN </button></a>
+    <!-- <a href="https://github.com/michaelw99"><button class="bottom-button"> GITHUB </button></a> -->
+    <a href="mailto:michaelw99@hotmail.com?Subject=Hello%20there" target="_top"><button class="bottom-button"> CONTACT </button></a>
+  </div>
+</div>
+
+<div class="contact">
+
+</div> 
+
+</body>
+
+<script>
+const scrollElements = document.querySelectorAll(".js-scroll");
+
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
+
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.1)) {
+      displayScrollElement(el);
+    }
+  })
+}
+
+window.addEventListener("scroll", () => { 
+  handleScrollAnimation();
+});
+
+</script>
 </html>
+
+
