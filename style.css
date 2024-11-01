@@ -280,6 +280,7 @@ p.intro-text {
     font-size: 2.0em;
     text-align: center;
     padding-right: 64%;
+    padding-top: 50px;
 /*    color: #edebdf;*/
 /*    background-color: #6c1c1c;*/
 /*    background-color: #222831;*/
@@ -316,6 +317,7 @@ p.intro-text {
     font-size: 2.0em;
     text-align: center;
     padding-right: 78%;
+    padding-top: 50px;
 /*    color: #edebdf;*/
 /*    background-color: #6c1c1c;*/
 /*    background-color: #222831;*/
@@ -346,11 +348,13 @@ p.intro-text {
     font-family: "Atkinson Hyperlegible", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2em;
+    font-size: 1.25em;
 }
 
 .about-text-box {
     padding-bottom: 30px;
+    text-align: left;
+    padding-left: 30px;
 }
 
 .about-text {
@@ -398,4 +402,8 @@ p.intro-text {
     background-color: #31363F;
     margin: 0px;
     padding-bottom: 10px;
+}
+
+.meimg {
+    padding-bottom: 50px;
 }
