@@ -198,32 +198,32 @@ ul {
 </div>
 
 <div class="text">
-  <p class="paragraph"><b>Kinetic!</b> is a proof of concept demo I created to familiarize myself with Unreal as well as test its 2D capabilities. I focused mainly on the player controller to design tight and fluid controls for a 2D movement platformer. Assets were taken from the Sunny Land assets pack so I could focus just on implementation. As of now this remains a short set of playable levels - though I plan to return to this in the future to explore other ways to utilize these mechanics.</p>
-  <p class="paragraph"> In the demo, your objective is to reach the goal as quickly as possible. Levels will test you on a variety of mechanics from grappling and wallrunning, to bashing and dashing. </p>
+  <p class="paragraph"><b>Kinetic!</b> is a proof of concept demo I created to familiarize myself with Unreal and test its 2D capabilities. My goals was to create a player controller with tight and fluid controls for a 2D movement platformer. Assets were taken from the Sunny Land assets pack so I could focus on implementation. As of now this remains a demo of a short set of playable levels - though I plan to return to this in the future to explore other ways to utilize these mechanics.</p>
+  <p class="paragraph"> In the demo, your objective is to reach the goal as quickly as possible. Levels test you on a variety of mechanics from grappling and wallrunning, to bashing and dashing.</p>
 </div>
 
 <div class="text">
   <h2><u>The Grapple</u></h2>
-  <p class="paragraph">My main motivation going into this project was to create a satisfying grapple mechanic, with a focus on the speed and momentum. While many 2D platformers incorporate a grapple as part of its moveset, I felt that few manage to capture the sense of flow and freedom that I imagine swinging around.</p>
-  <p class="paragraph"> I knew right off the bat that I wanted to create an implementation where I had complete control over the momentum of the grappling hook so I could tune it precisely to create the feel that I wanted. However, I still needed the grappling hook to preserve the momentum of the player, meaning that the start and end player velocities were crucial to a seamless feeling when interacting with the engine physics. </p>
+  <p class="paragraph">My main motivation going into this project was to create a satisfying grapple mechanic that is built around maintaining speed and building momentum. While many 2D platformers incorporate a grapple as part of its moveset, I felt that few managed to capture the sense of flow and freedom that I imagine when swinging around from platform to platforrm.</p>
+  <p class="paragraph"> I knew right off the bat that I wanted to create an implementation where I had complete control over the momentum of the grappling hook so I could tune it precisely to create the feel that I wanted. However, I still needed the grappling hook to preserve the momentum of the player, meaning that the start and end player velocities were crucial to creating a seamless feeling when interacting with the engine physics.</p>
   <p class="paragraph"> The grapple starts when the player fires a projectile and it makes contact with a surface. I introduce the idea of "tautness" to cover several points: </p>
   <ul>
-    <li>It only makes sense to start grappling immediately if you are falling</li>
+    <li>Swinging should only start if you are falling</li>
     <li>If the player is moving forward very quickly, the length of the grapple will shorten significantly during the time between when the player fires the projectile and when it reaches the target, resulting in a very short grapple</li>
-    <li>Give the player non-forward directional inputs for variety </li>
+    <li>When moving forward quickly, this pushes the player to use non-forward directional inputs for some variety</li>
   </ul>  
   <p class="paragraph">The implementation for this is quite simple. I record the point at which the projectile was fired, and when the projectile makes contact with a surface, I check that the player's distance is at least as far from the surface as they were when they fired the projectile.</p>
   <img src="images/grapplemath.png" width="800" height=auto>
   <p class="paragraph">Now, for the grapple itself. This starts with calculating the initial velocity of the grapple derived from the player's current velocity. I find this by getting the magnitude of the vector projection of the player velocity vector onto the plane perpindicular to the plane that connects the player to the grapple point.</p>
   <img src="images/grapplecurve.jpg" width="800" height=auto>
-  <p class="paragraph">With this velocity, I can now move the player around the circumference of the circle created by the grappling hook. For personal readibility, I represent the distance moved per frame during the grapple as degrees rotated about the circumference. To simulate the effects of gravity, I use a float curve to that affects the velocity depending on angle of the player around the grapple circumference as well as the direction the player is moving. The float curve allows me to precisely tune the feel of the grapple!</p>
+  <p class="paragraph">With this velocity, I can now move the player around the circumference of the circle created by the grappling hook. For personal readibility, I represent the distance moved per frame during the grapple as degrees rotated about the circumference. To simulate the effects of gravity, I use a float curve to affect the grapple velocity depending on angle of the player around the grapple circumference as well as the direction the player is moving. The float curve allows me to precisely tune the feel of the grapple!</p>
   <p class="paragraph">To finish it off, when the player releases the grapple, I set the player velocity to the to what was calculated on the previous frame and let the built-in physics handle the rest.</p>
 </div>
 
 <div class="text">
   <p class="paragraph">I built out the other mechanics to complement the grapple, giving the player more movement options, or ways to build or preserve the momentum gained from grappling.</p>
   <ul>
-    <li>Bashing gives players more linear grapple movement, allowing them to zoom directly towards enemies and launch off in a specified direction</li>
+    <li>Bashing (grappling an enemy) gives players more linear grapple movement, allowing them to zoom directly towards enemies and launch off in a specified direction</li>
     <li>Wallrunning creates space for verticality and builds in forgiveness for when players grapple into a wall (losing your momentum for hitting a wall sucks!)</li>
     <li>Dashing, usable by building a charge by moving quickly, gives the player a burst of speed that can be combo'd with the grapple huge swings</li>
     <li>Sliding helps preserve the player's momentum while moving quickly, and even increases it while moving down slopes</li>
