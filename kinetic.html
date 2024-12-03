@@ -215,7 +215,7 @@ ul {
   <p class="paragraph">The implementation for this is quite simple. I record the point at which the projectile was fired, and when the projectile makes contact with a surface, I check that the player's distance is at least as far from the surface as they were when they fired the projectile.</p>
   <img src="images/grapplemath.png" width="800" height=auto>
   <p class="paragraph">Now, for the grapple itself. This starts with calculating the initial velocity of the grapple derived from the player's current velocity. I find this by getting the magnitude of the vector projection of the player velocity vector onto the plane perpindicular to the plane that connects the player to the grapple point.</p>
-  <img src="images/grapplecurve.jpg" width="800" height=auto>
+  <img src="images/grapple_curve.jpg" width="800" height=auto>
   <p class="paragraph">With this velocity, I can now move the player around the circumference of the circle created by the grappling hook. For personal readibility, I represent the distance moved per frame during the grapple as degrees rotated about the circumference. To simulate the effects of gravity, I use a float curve to affect the grapple velocity depending on angle of the player around the grapple circumference as well as the direction the player is moving. The float curve allows me to precisely tune the feel of the grapple!</p>
   <p class="paragraph">To finish it off, when the player releases the grapple, I set the player velocity to the to what was calculated on the previous frame and let the built-in physics handle the rest.</p>
 </div>
